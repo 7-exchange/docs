@@ -1,0 +1,543 @@
+/* =============================================================================
+   7.Exchange — Honkit documentation theme
+   Matched to the main app's globals.css: #0C0C0C base, cyan accent (HSL 191 100% 50%
+   = #00d0ff), dark-teal ambient glow + grain, Kanit / Overpass / Montserrat type.
+
+   Install:
+     1. Save as  styles/website.css  in your docs repo.
+     2. book.json:  { "styles": { "website": "styles/website.css" } }
+   ============================================================================= */
+
+/* Same families the app loads. Self-host these for a no-external-request build. */
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700&family=Overpass:wght@300;400;500;600;700&display=swap");
+
+:root {
+  /* ---- Brand (pulled straight from the app) ---------------------------- */
+  --x-accent: #00d0ff;
+  /* --primary: 191 100% 50% */
+  --x-accent-contrast: #04181c;
+  /* dark text on top of the cyan */
+  --x-glow: rgba(24, 64, 73, 0.45);
+  /* teal glow, from home-bg */
+
+  /* ---- Surfaces -------------------------------------------------------- */
+  --x-bg: #0c0c0c;
+  /* body background in the app */
+  --x-bg-top: #040607;
+  /* --bg-top */
+  --x-bg-sidebar: #090b0c;
+  /* slightly darker, faint teal */
+  --x-surface: #12181a;
+  /* code, inputs, table stripes (teal-tinted) */
+  --x-surface-2: #182124;
+  --x-border: rgba(255, 255, 255, 0.08);
+  --x-border-2: rgba(255, 255, 255, 0.14);
+
+  /* ---- Text ------------------------------------------------------------ */
+  --x-text: #e6e6e6;
+  --x-text-dim: #8b9498;
+  /* cool-grey, fits the teal theme */
+  --x-heading: #ffffff;
+  --x-link: var(--x-accent);
+
+  /* ---- Type (Kanit display, Overpass body) ----------------------------- */
+  --x-display: 'Kanit', 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --x-font: 'Overpass', 'Montserrat', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --x-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas,
+    'Liberation Mono', monospace;
+
+  --x-radius: 10px;
+}
+
+html {
+  font-size: 100%;
+}
+
+/* 11px base instead of 10px — ~10% larger everywhere */
+
+.alert {
+  border-bottom: none !important;
+  border-radius: 10px;
+}
+
+.alert-info {
+  background-color: rgba(13, 110, 253, 0.1) !important;
+}
+
+.alert-success {
+  background-color: rgba(25, 135, 84, 0.1) !important;
+}
+
+.alert-warning {
+  background-color: rgba(255, 193, 7, 0.1) !important;
+}
+
+.alert-danger {
+  background-color: rgba(220, 53, 69, 0.1) !important;
+}
+
+/* -----------------------------------------------------------------------------
+   Base — #0C0C0C with a fixed top teal glow (echoes the app's home-bg), and all
+   built-in color themes forced to this look so the night/sepia toggle can't undo it.
+   --------------------------------------------------------------------------- */
+.book,
+.book.color-theme-0,
+.book.color-theme-1,
+.book.color-theme-2 {
+  background:
+    radial-gradient(60% 38% at 50% 0%, var(--x-glow) 0%, transparent 60%),
+    linear-gradient(var(--x-bg-top), var(--x-bg) 320px);
+  background-attachment: fixed;
+  color: var(--x-text);
+  font-family: var(--x-font);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Content panes transparent so the ambient glow shows through behind the text */
+.book .book-body,
+.book .body-inner,
+.book.color-theme-1 .book-body,
+.book.color-theme-2 .book-body {
+  background: transparent !important;
+  color: var(--x-text);
+}
+
+.book .book-body .page-wrapper .page-inner section.markdown-section,
+.book.color-theme-1 .book-body .page-wrapper .page-inner section.markdown-section,
+.book.color-theme-2 .book-body .page-wrapper .page-inner section.markdown-section {
+  background: transparent !important;
+  color: var(--x-text) !important;
+}
+
+/* Grain overlay (matches the app's .noise, --grain-opacity ~0.03).
+   Delete this whole block if you don't want the texture. */
+.book::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+  background-size: 182px;
+}
+
+/* -----------------------------------------------------------------------------
+   Sidebar (table of contents) — darker solid panel
+   --------------------------------------------------------------------------- */
+.book .book-summary {
+  background: var(--x-bg-sidebar);
+  border-right: 1px solid var(--x-border);
+  color: var(--x-text-dim);
+}
+
+/* Logo at the top of the sidebar.
+   1. Put your logo at  styles/logo.svg  (or set an absolute https URL below).
+   2. url() resolves relative to THIS css file in the build, so if the relative
+      path doesn't resolve, use a full URL e.g. url("https://7.exchange/logo.svg").
+   Adjust the 30px height to taste. */
+.book .book-header {
+  position: relative;
+  padding-top: 5px;
+  height: 60px
+}
+
+.book .book-header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  right: 15px;
+  top: 15px;
+  background: url("logo.svg") left center / auto 30px no-repeat;
+}
+
+.book .book-summary ul.summary li a,
+.book .book-summary ul.summary li span {
+  color: var(--x-text-dim);
+  font-weight: 500;
+  transition: color .12s ease, background .12s ease;
+}
+
+.book .book-summary ul.summary li a:hover {
+  color: var(--x-heading);
+  background: var(--x-surface);
+}
+
+.book .book-summary ul.summary li.active>a {
+  color: var(--x-heading);
+  background: var(--x-surface);
+  border-left: 2px solid var(--x-accent);
+  font-weight: 600;
+}
+
+/* "## Section" group headers from SUMMARY.md */
+.book .book-summary ul.summary li.header {
+  color: var(--x-text-dim);
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  font-size: 11px;
+  font-weight: 700;
+  padding-top: 22px;
+  font-family: var(--x-display);
+}
+
+/* "***" divider */
+.book .book-summary ul.summary li.divider {
+  background: var(--x-border);
+  height: 1px;
+}
+
+/* Search box */
+#book-search-input {
+  background: var(--x-bg-sidebar);
+  border-bottom: 1px solid var(--x-border);
+  padding: 10px 14px;
+}
+
+#book-search-input input,
+#book-search-input input:focus {
+  background: var(--x-surface);
+  color: var(--x-text);
+  border: 1px solid var(--x-border);
+  border-radius: var(--x-radius);
+  box-shadow: none;
+  outline: none;
+}
+
+#book-search-input input:focus {
+  border-color: var(--x-accent);
+}
+
+#book-search-input input::placeholder {
+  color: var(--x-text-dim);
+}
+
+/* -----------------------------------------------------------------------------
+   Top header bar
+   --------------------------------------------------------------------------- */
+.book .book-header {
+  background: transparent;
+  border-bottom: 1px solid var(--x-border);
+  color: var(--x-text-dim);
+  box-shadow: none;
+}
+
+.book .book-header h1 {
+  color: var(--x-text-dim);
+  font-weight: 600;
+  font-family: var(--x-display);
+}
+
+.book .book-header .btn {
+  color: var(--x-text-dim);
+}
+
+.book .book-header .btn:hover {
+  color: var(--x-heading);
+}
+
+/* -----------------------------------------------------------------------------
+   Content typography
+   --------------------------------------------------------------------------- */
+/* Honkit's default theme uses a 62.5% (10px) rem base, which makes rem-sized
+   text render small. Size the content in px/em instead so it stays readable,
+   and pin tables to the same size as body so they don't look oversized. */
+.markdown-section {
+  color: var(--x-text);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.markdown-section p,
+.markdown-section li,
+.markdown-section td,
+.markdown-section th,
+.markdown-section blockquote {
+  font-size: 16px;
+}
+
+.markdown-section table {
+  font-size: 16px;
+}
+
+.markdown-section h1,
+.markdown-section h2,
+.markdown-section h3,
+.markdown-section h4,
+.markdown-section h5,
+.markdown-section h6 {
+  color: var(--x-heading);
+  font-family: var(--x-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.markdown-section h1 {
+  font-size: 2.4em;
+  margin-top: 0;
+}
+
+.markdown-section h2 {
+  font-size: 1.7em;
+  border-bottom: 1px solid var(--x-border);
+  padding-bottom: .3em;
+}
+
+.markdown-section h3 {
+  font-size: 1.35em;
+}
+
+.markdown-section h4 {
+  font-size: 1.1em;
+}
+
+.markdown-section a {
+  color: var(--x-link);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color .12s ease;
+}
+
+.markdown-section a:hover {
+  border-bottom-color: var(--x-accent);
+}
+
+.markdown-section strong {
+  color: var(--x-heading);
+  font-weight: 700;
+}
+
+.markdown-section hr {
+  border: 0;
+  height: 1px;
+  background: var(--x-border);
+  margin: 2.2em 0;
+}
+
+.markdown-section img {
+  border: 1px solid var(--x-border);
+  border-radius: var(--x-radius);
+}
+
+/* -----------------------------------------------------------------------------
+   Code
+   --------------------------------------------------------------------------- */
+.markdown-section code {
+  font-family: var(--x-mono);
+  background: var(--x-surface);
+  color: #e8e8e8;
+  border: 1px solid var(--x-border);
+  border-radius: 6px;
+  padding: .14em .42em;
+  font-size: .86em;
+}
+
+.markdown-section pre {
+  background: var(--x-surface);
+  border: 1px solid var(--x-border);
+  border-radius: var(--x-radius);
+  padding: 16px 18px;
+}
+
+.markdown-section pre>code {
+  font-family: var(--x-mono);
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: #e8e8e8;
+  font-size: .86em;
+  line-height: 1.6;
+}
+
+/* highlight.js tokens (Honkit's default highlighter), tuned to the cyan/teal palette */
+.hljs {
+  background: transparent;
+  color: #e8e8e8;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5d6b6f;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-built_in {
+  color: #ff6b9d;
+}
+
+.hljs-string,
+.hljs-attr,
+.hljs-template-string {
+  color: cyan;
+}
+.book .book-body .page-wrapper .page-inner section.normal pre .hljs-code,
+.book .book-body .page-wrapper .page-inner section.normal code .hljs-code,
+.book .book-body .page-wrapper .page-inner section.normal pre .hljs-addition,
+.book .book-body .page-wrapper .page-inner section.normal code .hljs-addition,
+.book .book-body .page-wrapper .page-inner section.normal pre .hljs-title.class_.inherited__,
+.book .book-body .page-wrapper .page-inner section.normal code .hljs-title.class_.inherited__,
+.book .book-body .page-wrapper .page-inner section.normal pre .hljs-string,
+.book .book-body .page-wrapper .page-inner section.normal code .hljs-string {
+  color: cyan !important;
+}
+.hljs-number,
+.hljs-symbol,
+.hljs-bullet {
+  color: #f0a868;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-function .hljs-title {
+  color: var(--x-accent);
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #c792ea;
+}
+
+.hljs-variable,
+.hljs-name,
+.hljs-tag {
+  color: #e6e6e6;
+}
+
+.hljs-meta {
+  color: #8b9498;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: 700;
+}
+
+.hljs-deletion {
+  color: #ff6b9d;
+}
+
+.hljs-addition {
+  color: #6fdab1;
+}
+
+/* -----------------------------------------------------------------------------
+   Tables
+   --------------------------------------------------------------------------- */
+.markdown-section table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.markdown-section table th,
+.markdown-section table td {
+  border: 1px solid var(--x-border);
+  padding: 9px 13px;
+}
+
+.markdown-section table th {
+  background: var(--x-surface);
+  color: var(--x-heading);
+  font-weight: 600;
+  text-align: left;
+}
+
+.markdown-section table tr {
+  background: transparent;
+  border-top: 1px solid var(--x-border);
+}
+
+.markdown-section table tr:nth-child(2n) {
+  background: var(--x-surface);
+}
+
+/* -----------------------------------------------------------------------------
+   Blockquotes (also where > [!NOTE] callouts land)
+   --------------------------------------------------------------------------- */
+.markdown-section blockquote {
+  background: var(--x-surface);
+  border-left: 3px solid var(--x-accent);
+  border-radius: 0 var(--x-radius) var(--x-radius) 0;
+  color: var(--x-text-dim);
+  padding: 12px 18px;
+}
+
+.markdown-section blockquote> :first-child {
+  margin-top: 0;
+}
+
+.markdown-section blockquote> :last-child {
+  margin-bottom: 0;
+}
+
+/* -----------------------------------------------------------------------------
+   Prev / next navigation
+   --------------------------------------------------------------------------- */
+.book .book-body .navigation {
+  color: var(--x-text-dim);
+  transition: color .12s ease;
+}
+
+.book .book-body .navigation:hover {
+  color: var(--x-accent);
+}
+
+/* -----------------------------------------------------------------------------
+   Search highlight, selection, scrollbars (6px, matching the app), focus, motion
+   --------------------------------------------------------------------------- */
+.markdown-section .search-highlight-keyword {
+  background: rgba(0, 208, 255, 0.18);
+  color: var(--x-heading);
+  padding: 0 2px;
+  border-radius: 3px;
+}
+
+::selection {
+  background: var(--x-accent);
+  color: var(--x-accent-contrast);
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--x-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .book,
+  .book * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

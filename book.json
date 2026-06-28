@@ -1,3 +1,7 @@
 {
-  "plugins": ["hints"]
+    "title": "7.Exchange Docs",
+  "styles": {
+    "website": "styles/website.css"
+  },
+  "plugins": ["hints", "-fontsettings"]
 }

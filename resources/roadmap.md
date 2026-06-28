@@ -61,7 +61,7 @@ This roadmap covers the full development timeline of 7.Exchange from early infra
 ## Q2 2026 Public Launch & Expansion
 
 - [x] **MVP public launch**\
-  Full platform live at [7.exchange](https://7.exchange). Cross-chain swap aggregation across 128+ chains, 10+ bridges, and 274+ liquidity sources through a single non-custodial interface. See the [Integrations page](https://7.exchange/integrations) for the live count.
+  Full platform live at [7.exchange](https://7.exchange). Cross-chain swap aggregation across 135+ chains, 10+ bridges, and 310+ liquidity sources through a single non-custodial interface. See the [Integrations page](https://7.exchange/integrations) for the live count.
 
 - [ ] **Direct Swap via Chainflip**\
   Wallet-less swap execution using Chainflip's deposit address model. Users provide a receiving address and send funds from any source hardware wallet, CEX withdrawal, or any on-chain wallet without connecting to the platform.

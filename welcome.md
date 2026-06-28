@@ -35,9 +35,9 @@ The routing engine evaluates quotes from multiple providers in real time, ranks 
 
 | | |
 |---|---|
-| **Chains** | 128+ supported networks (EVM and non-EVM) |
+| **Chains** | 135+ supported networks (EVM and non-EVM) |
 | **Bridges** | 10+ cross-chain transport integrations |
-| **Liquidity** | 274+ DEXs, LPs, and on-chain services |
+| **Liquidity** | 310+ DEXs, LPs, and on-chain services |
 | **Wallets** | 40+ supported wallet integrations |
 | **Custody** | Non-custodial 7.Exchange never holds your funds |
 
@@ -55,6 +55,6 @@ Integration counts change as providers are added. For the live list, see the [In
 | Discord | [7.Exchange](https://discord.com/invite/8aujTp5znT) |
 | Telegram | [@Dex\_7exchange](https://t.me/Dex_7exchange) |
 | LinkedIn | [7exchange](https://www.linkedin.com/company/7exchange) |
-| GitHub | [7ExchangeDefi](https://github.com/7ExchangeDefi) |
+| GitHub | [7ExchangeDefi](https://github.com/7-exchange) |
 | Medium | [7-exchange.medium.com](https://7-exchange.medium.com/) |
 | Email | [contact@7.exchange](mailto:contact@7.exchange) |

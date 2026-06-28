@@ -10,7 +10,7 @@ description: Official 7.Exchange channels and community links.
 |---|---|
 | **Website** | [7.exchange](https://7.exchange) |
 | **App** | [7.exchange/swap](https://7.exchange/swap) |
-| **Documentation** | [7exchange.gitbook.io](https://7exchange.gitbook.io) |
+| **Documentation** | [docs.7.exchange](https://docs.7.exchange) |
 | **Medium** | [7-exchange.medium.com](https://7-exchange.medium.com/) |
 
 ## Social
@@ -26,7 +26,7 @@ description: Official 7.Exchange channels and community links.
 
 | Platform | Link |
 |---|---|
-| **GitHub** | [7ExchangeDefi](https://github.com/7ExchangeDefi) |
+| **GitHub** | [7ExchangeDefi](https://github.com/7-exchange) |
 
 ## Contact
 
