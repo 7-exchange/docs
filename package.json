@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@whyun/gitbook": "^3.3.2"
+  }
+}
