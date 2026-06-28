@@ -1,5 +1,11 @@
 {
-  "dependencies": {
-    "@whyun/gitbook": "^3.3.2"
+  "scripts": {
+    "build": "honkit build",
+    "serve": "honkit serve",
+    "init": "honkit init"
+  },
+  "devDependencies": {
+    "gitbook-plugin-hints": "^1.0.2",
+    "honkit": "^6.2.2"
   }
 }
