@@ -4,10 +4,12 @@ description: SDK status for 7.Exchange integrations.
 
 # SDK
 
-There is no separate public SDK required for production swap integrations.
+A typed SDK is on our [roadmap](resources/roadmap.md) for Q3 2026.
 
-Use the [API Reference](api-reference.md) and call the production REST API directly:
+For now, integrate directly against the REST API:
 
-```text
+​```
 https://api.7.exchange
-```
+​```
+
+See the [API Reference](https://docs.7.exchange/developers/api-reference.html) for endpoints and examples.

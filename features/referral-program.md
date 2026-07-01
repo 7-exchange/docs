@@ -13,8 +13,8 @@ description: Earn crypto rewards by referring traders to 7.Exchange.
 3. **Share your link** Send your link to others or share it publicly.
 4. **Earn rewards** When someone uses your link and trades through a route that supports affiliate fees, 7.Exchange collects the provider affiliate fee to the platform fee wallet and records your eligible referral earning internally.
 
-{% hint style="warning" %}
-Not all routes support affiliate fees.
+{% hint style="info" %}
+**Stargate** routes aren't fee-eligible.
 {% endhint %}
 
 ## Affiliate dashboard

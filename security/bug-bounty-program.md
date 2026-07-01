@@ -53,6 +53,6 @@ Reward amounts are determined at 7.Exchange's discretion and communicated during
 - One report per vulnerability. Duplicate reports are not eligible for rewards.
 - Compliance with applicable laws is required.
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 Attempting to exploit vulnerabilities on production systems, accessing other users' funds or data, or violating the rules above will disqualify you from the program and may result in legal action.
 {% endhint %}

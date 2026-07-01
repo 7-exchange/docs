@@ -1,7 +1,11 @@
 {
-    "title": "7.Exchange Docs",
+  "title": "7.Exchange Docs",
+  "favicon": "favicon.ico",
   "styles": {
     "website": "styles/website.css"
   },
-  "plugins": ["hints", "-fontsettings"]
+  "plugins": [
+    "hints",
+    "-fontsettings"
+  ]
 }

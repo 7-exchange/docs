@@ -35,6 +35,6 @@ description: Official 7.Exchange channels and community links.
 | **Email** | [contact@7.exchange](mailto:contact@7.exchange) |
 | **Security** | [bug report panel](https://discord.gg/DArANebGFm) |
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 7.Exchange will never DM you first on any platform asking for funds, private keys, or seed phrases. Any such contact is a scam. Always verify links through this page or the official website.
 {% endhint %}

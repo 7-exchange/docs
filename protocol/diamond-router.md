@@ -6,7 +6,7 @@ description: On-chain routing, bridging, and swap execution contracts powering 7
 
 The routing layer is the on chain execution engine responsible for swaps, cross network transfers, and final settlement. It is built using a modular proxy pattern that allows multiple independent components to operate behind a single entry point.
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 The system is currently under security review and is not yet deployed to production environments. A pre launch security program is active.
 {% endhint %}
 
@@ -44,7 +44,7 @@ External users and integrators interact with one stable address regardless of in
 **Governed upgrades**
 All modifications are delayed through a governance mechanism, ensuring transparency before activation.
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 Only approved modules are exposed for execution. Any unregistered logic is inaccessible, which reduces attack surface but requires strict upgrade procedures.
 {% endhint %}
 
@@ -79,7 +79,7 @@ Administrative capabilities are separated into dedicated modules:
 * Allowlist management restricting external interactions
 * Recovery mechanism for stuck or misrouted assets
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 Emergency controls can disable parts of the system in critical scenarios. These controls should only be triggered under strict operational guidelines.
 {% endhint %}
 
@@ -128,7 +128,7 @@ Upon arrival on the target network:
 
 If execution fails, recovery logic is triggered and funds can be reclaimed.
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 Failure during destination execution does not result in loss of funds. Recovery mechanisms ensure assets remain claimable.
 {% endhint %}
 
@@ -155,7 +155,7 @@ All system changes are subject to a time delay before execution. This ensures:
 
 Control is ultimately assigned to a multi party authorization system prior to production deployment.
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 Upgrades are delayed but not permissionless. Governance authority must be secured and monitored.
 {% endhint %}
 

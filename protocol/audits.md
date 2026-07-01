@@ -28,7 +28,7 @@ No contracts are deployed to production environments until security review is co
 | **Audit status** | Planned (Q3 2026, prior to token launch) |
 | **Report** | Will be published here upon completion |
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 Token deployment will not occur before a completed audit and public report.
 {% endhint %}
 
@@ -60,7 +60,7 @@ Pre deployment contracts are exposed to external researchers through a structure
 
 See [Bug Bounty Program](../security/bug-bounty-program.md) for full details.
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 Vulnerabilities must not be disclosed publicly before remediation.
 {% endhint %}
 
@@ -103,7 +103,7 @@ Before deployment, the system undergoes final security configuration:
 - Emergency shutdown procedures tested in simulated environments  
 - All contract addresses verified  
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 Deployment is blocked until all critical and high severity findings are resolved.
 {% endhint %}
 

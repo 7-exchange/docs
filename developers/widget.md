@@ -4,6 +4,8 @@ description: Widget status for 7.Exchange integrations.
 
 # Widget
 
-There is no separate widget API documented for production integrators.
+{% hint style="info" %}
+An embeddable swap widget is also planned for Q3 2026.
+{% endhint %}
 
-Use the [API Reference](api-reference.md) to build against the public swap endpoints.
+Until then, build your own front-end on top of the [REST API](developers/api-reference).

@@ -39,7 +39,7 @@ Throughout this process, the execution tracker in the 7.Exchange interface shows
 
 ## Transaction finality
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 Once you sign and broadcast a transaction, it is **irreversible**. 7.Exchange cannot cancel, reverse, or modify any on-chain transaction. Always review the quote preview carefully before signing.
 {% endhint %}
 

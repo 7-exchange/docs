@@ -64,7 +64,7 @@ By default, referrers become eligible for 50% of the provider-reported affiliate
 
 The minimum payout amount is **$10**. Referral earnings below $10 are not included in a payout list; they remain unclaimed and carry forward until the referrer's balance reaches the minimum.
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 Not all routes support affiliate fees.
 {% endhint %}
 

@@ -43,7 +43,7 @@ For most routes, the source address must match a connected wallet since the plat
 
 The destination address determines where your swapped tokens are delivered. By default this is your connected wallet on the destination chain, but you can change it to any valid address.
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 Double-check both the source and destination addresses and their chains before confirming. Cross-chain transactions are irreversible. Tokens sent to an incorrect address cannot be recovered.
 {% endhint %}
 

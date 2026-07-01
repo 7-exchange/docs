@@ -56,6 +56,6 @@ One interface, several ways to trade:
 | Discord | [7.Exchange](https://discord.com/invite/8aujTp5znT) |
 | Telegram | [@Dex_7exchange](https://t.me/Dex_7exchange) |
 | LinkedIn | [7exchange](https://www.linkedin.com/company/7-exchange) |
-| GitHub | [7ExchangeDefi](https://github.com/7-exchange) |
+| GitHub | [7-exchange](https://github.com/7-exchange) |
 | Medium | [7-exchange.medium.com](https://7-exchange.medium.com/) |
 | Email | [contact@7.exchange](mailto:contact@7.exchange) |

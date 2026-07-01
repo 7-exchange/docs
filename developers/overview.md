@@ -7,18 +7,21 @@ description: Production swap API integration for 7.Exchange.
 The 7.Exchange production swap API is ready for integrators.
 
 ```text
-https://api.7.exchange
+https://api.7.exchange/api/v1
 ```
 
 The developer docs focus on the public swap integration flow:
 
-- `GET /api/swap/chains`
-- `GET /api/swap/assets`
-- `GET /api/swap/sources`
-- `POST /api/quote`
-- `POST /api/quote/lock`
-- `POST /api/quote/execute`
-- `GET /api/transaction/history`
+- `GET /api/v1/swap/chains`
+- `GET /api/v1/swap/assets`
+- `GET /api/v1/swap/sources`
+- `POST /api/v1/quote`
+- `POST /api/v1/quote/lock`
+- `POST /api/v1/quote/submit-signature`
+- `POST /api/v1/quote/execute`
+- `GET /api/v1/transaction/status`
+- `POST /api/v1/transaction/track`
+- `GET /api/v1/transaction/history`
 
 Read the full [API Reference](api-reference.md) for request fields, examples, and response shapes.
 

@@ -27,7 +27,7 @@ If a token isn't listed in the default token list but you have its contract addr
 
 The token will be added to your personal token list and available for selection in the swap interface.
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 Only import tokens from contract addresses you trust. Anyone can deploy a token contract verify the address through the project's official channels before importing.
 {% endhint %}
 

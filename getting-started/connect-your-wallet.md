@@ -62,6 +62,6 @@ To disconnect your wallet, open the wallet menu and select **Disconnect**. To di
 
 Disconnecting removes the wallet connection from the 7.Exchange interface. It does not affect your on-chain assets or any pending transactions.
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 7.Exchange will never ask for your private keys or seed phrase. Any request for this information is fraudulent.
 {% endhint %}

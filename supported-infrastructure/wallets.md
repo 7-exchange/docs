@@ -41,7 +41,7 @@ Hardware wallets (Ledger, Trezor) work with 7.Exchange when connected through a 
 
 ## Wallet security
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 7.Exchange will never ask for your private keys or seed phrase. Connecting your wallet only grants the interface permission to read your address and request transaction signatures. It does not give 7.Exchange access to move your funds.
 {% endhint %}
 
